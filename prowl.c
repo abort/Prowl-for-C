@@ -8,7 +8,6 @@
  */
 #include "prowl.h"
 
-
 int prowl_push_msg(char* api_key, int priority, char* application_name, char* event_name, char* description)
 {
 	prowl_connection* c;
@@ -219,6 +218,7 @@ static void prowl_ssl_disconnect(prowl_connection* c)
 	free(c);
 }
 
+/* credits to: http://www.geekhideout.com/urlcode.shtml */
 static char prowl_int_to_hex(char code) {
 	static char hex[] = "0123456789abcdef";
 	return hex[code & 15];

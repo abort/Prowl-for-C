@@ -6,9 +6,9 @@
  * this stuff is worth it, you can buy me a beer in return J. Dijkstra (04/29/2010)
  * ----------------------------------------------------------------------------
  */
-#include "prowl.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "prowl.h"
 
 #define APP_NAME "ProwlExample"
 

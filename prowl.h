@@ -58,15 +58,4 @@ typedef struct {
 
 int prowl_push_msg(char* api_key, int priority, char* application_name, char* event_name, char* description);
 
-/* module specific functionality */
-static SOCKET prowl_tcp_connect();
-static prowl_connection* prowl_ssl_connect();
-static void prowl_ssl_disconnect(prowl_connection* c);
-static char* prowl_ssl_read(prowl_connection* c);
-static int prowl_get_response_code(char* response);
-
-/* credits to: http://www.geekhideout.com/urlcode.shtml */
-static char prowl_int_to_hex(char code);
-static char* prowl_url_encode(char* str);
-
 #endif
