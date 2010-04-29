@@ -31,6 +31,8 @@
 #include <winsock2.h>
 
 #pragma comment(lib, "ws2_32.lib")
+#pragma comment(lib, "ssleay32MT.lib")
+#pragma comment(lib, "libeay32MT.lib")
 #else
 #define SOCKET int
 #define SOCKET_ERROR -1

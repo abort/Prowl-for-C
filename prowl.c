@@ -8,6 +8,15 @@
  */
 #include "prowl.h"
 
+
+static int prowl_get_response_code(char* response);
+static prowl_connection* prowl_ssl_connect();
+static SOCKET prowl_tcp_connect();
+static char* prowl_ssl_read(prowl_connection* c);
+static void prowl_ssl_disconnect(prowl_connection* c);
+static char prowl_int_to_hex(char code);
+static char* prowl_url_encode(char* str);
+
 int prowl_push_msg(char* api_key, int priority, char* application_name, char* event_name, char* description)
 {
 	prowl_connection* c;
@@ -44,7 +53,7 @@ int prowl_push_msg(char* api_key, int priority, char* application_name, char* ev
 	if ((c = prowl_ssl_connect()) == NULL) goto end;
 	
 #ifdef _DEBUG
-	printf(("Prowl [debug]: Connected\n");
+	printf("Prowl [debug]: Connected\n");
 #endif
 	
 	sprintf(buffer, "GET /publicapi/add?apikey=%s&priority=%d&application=%s&event=%s&description=%s\r\nHost: %s\r\n\r\n",
@@ -218,13 +227,14 @@ static void prowl_ssl_disconnect(prowl_connection* c)
 	free(c);
 }
 
-/* credits to: http://www.geekhideout.com/urlcode.shtml */
-static char prowl_int_to_hex(char code) {
+static char prowl_int_to_hex(char code) 
+{
 	static char hex[] = "0123456789abcdef";
 	return hex[code & 15];
 }
 
-static char* prowl_url_encode(char* str) {
+static char* prowl_url_encode(char* str) 
+{
 	char* pstr = str;
 	char* buf = (char*)malloc(strlen(str) * 3 + 1);
 	char* pbuf = buf;
