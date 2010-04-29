@@ -2,3 +2,5 @@ Prowl for C
 ---------------------
 
 This project requires the OpenSSL library and has been tested on Mac OS X (Snow Leopard) and Windows XP SP3.
+
+Feel free to improve the module as there is still plenty of room for improvement (think of things as buffer safety and better XML parsing).
