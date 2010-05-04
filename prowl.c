@@ -25,6 +25,7 @@ int prowl_push_msg(char* api_key, int priority, char* application_name, char* ev
 #ifdef _WINDOWS
 	static int wsa_init = 0;
 #endif
+	int retval = -1;
 	
 	application_name = prowl_url_encode(application_name);
 	event_name = prowl_url_encode(event_name);

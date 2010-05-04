@@ -15,7 +15,7 @@
 int main(int argc, char** argv) {	
 	if (argc < 4)
 	{
-		printf("Usage: prowl.exe <api_key> <priority-number> <event> <description>\n");
+		printf("Usage: prowl <api_key> <priority-number> <event> <description>\n");
 		return 1;
 	}
 	
