@@ -1,7 +1,7 @@
 Prowl for C (by J. Dijkstra / abort@digitalise.net)
 ---------------------
 
-This project requires the OpenSSL library and has been tested on Mac OS X (Snow Leopard) and Windows XP SP3.
+This project requires the OpenSSL library and has been tested on Mac OS X (Snow Leopard), Windows XP Professional with SP3 and Debian 5.0.
 
 Feel free to improve the module as there is still plenty of room for improvement (think of things as buffer safety and better XML parsing).
 
